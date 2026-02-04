@@ -22,10 +22,10 @@ function getIconPath(iconName) {
 
 // Creates memory objects if not exists
 if(!JSON.parse(localStorage.getItem("cities"))) {
-    localStorage.setItem("cities", JSON.stringify([""]));
+    localStorage.setItem("cities", JSON.stringify(["London"]));
 }
 if(!JSON.parse(localStorage.getItem("activeCity"))) {
-    localStorage.setItem("activeCity", JSON.stringify([""]));
+    localStorage.setItem("activeCity", JSON.stringify(["London"]));
 }
 if(!JSON.parse(localStorage.getItem("settings"))) {
     localStorage.setItem("settings", JSON.stringify({
