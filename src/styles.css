@@ -1,3 +1,327 @@
+:root {
+    --light-cyan: #CAF0F8;
+    --frosted-blue: #90E0EF;
+    --turquoise-blue: #00B4D8;
+    --bright-teal: #0077B6;
+    --deep-twilight: #669bbc;
+
+    color: black;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: 300;
+}
+
 body {
-    background-color: bisque;
+    background-color: gray;
+    
+    /* Main flex container */
+    display: flex;
+    height: 98vh;
+    gap: 1rem;
+}
+
+.liquid-glass {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background-color: darkgray;
+}
+
+/* Left sidebar stles */
+.sidebar {
+    min-width: 3rem;
+    padding-top: 1rem;
+    flex: 0 0 8%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.svg-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: contain;
+    display: block;
+    margin-bottom: 3rem;
+    background: rgba(255, 255, 255, 0.05); 
+    border-radius: 50%;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.7rem;
+    transition: 0.5s;
+    width: 100%;
+    border-radius: 16px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.menu-container:hover {
+    background-color: gray;
+}
+
+.small-icon {
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Center part styles */
+.main-content {
+    flex: 0 0 55%;
+    padding-top: 0.5rem;
+}
+
+.search {
+    width: 98%;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: lightgray;
+    border-radius: 8px;
+    padding: 0.5rem;
+    transition: 0.5s;
+    border-radius: 8px;
+}
+
+.search:focus {
+    outline: none;
+    border: 1px solid var(--bright-teal);
+}
+
+.main-display {
+    display: flex;
+    height: 35%;
+}
+
+.live-forecast-section {
+    flex: 0 0 65%;
+    padding-left: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.temp {
+    padding-top: 3rem;
+    justify-self: end;
+}
+
+.big-icon-section {
+    flex: 0 0 35%;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
+    max-width: 10rem;
+}
+
+.big-text {
+    font-size: 3.8rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+.forecast-sections-container {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    height: 47%;
+}
+
+.today-forecast {
+    flex: 0 0 50%;
+    padding: 1rem;
+}
+
+.air-conditions {
+    flex: 0 0 50%;
+    padding: 1rem;
+}
+
+#custom-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(4px);    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;               
+    transition: opacity 0.3s ease;
+}
+
+.modal-buttons>button {
+    font-size: 1rem;
+    width: 5rem;
+    height: 2rem;
+    margin: 0.5rem;
+    border-radius: 8px;
+    padding: 0.2rem;
+}
+
+/* State for hiding the modal */
+.modal-hidden {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+.confirm-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.2rem;
+    padding: 1rem;
+    min-width: 300px;
+    min-height: fit-content;
+}
+
+.right-section {
+    flex: 0 0 35%;
+}
+
+/* -- Cities selection styles -- */
+.city-selection {
+    width: 25rem;
+}
+
+.city-card {
+    display: flex;
+    padding: 1rem 2rem;
+    align-items: center;
+    margin-bottom: .5rem;
+    gap: .5rem;
+}
+
+.city-card > button {
+    flex: 0 0 25%;
+    width: 7rem;
+    height: 2.2rem;
+    border-radius: 8px;
+    border: 0;
+    background-color: gray;
+    margin-left: auto;
+    transition: 0.5s;
+}
+
+.city-card > h2 {
+    flex: 0 0 50%;
+}
+
+.city-card > button:hover {
+    color: white;
+    background-color: gray;
+    cursor: pointer;
+}
+
+.heading-text {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+.forecast-section {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.forecast-card {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.forecast-card>svg {
+    padding-top: .5rem;
+}
+
+.details-section-parent {
+    display: flex;
+    padding: 1rem;
+    gap: 2rem;
+    height: 75%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.details-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.details-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+}
+
+/* Week forecast section */
+.week-forecast {
+    height: 95%;
+    margin-right: 0.5rem;
+    padding: 1rem 2rem;
+}
+
+.week-forecast-parent {
+    display: flex;
+    height: 90%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.day-card {
+    display: flex;
+}
+
+.day-name {
+    flex: 0 0 20%;
+}
+
+.day-card>img {
+    width: 2.2rem;
+    flex: 0 0 12%;
+}
+
+.day-condition {
+    margin-left: 5%;
+    flex: 0 0 35%;
+}
+
+.day-temp {
+    flex: 0 0 28%;
+}
+
+.highlight-navigation {
+    background-color: gray;
+}
+
+.highlight-button {
+    font-weight: 500;
+    color: white;
 }

@@ -3,9 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: {
+    main: './src/index.js',
+    cities: './src/cities.js',
+    settings: "./src/settings.js" 
+  },
   output: {
-    filename: 'main.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
     clean: true, // Cleans the dist folder on every build
   },
@@ -15,7 +19,19 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html', // Your HTML template
+      filename: 'index.html',
+      template: './src/index.html',
+      chunks: ['main'] // Your main weather app JS
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'cities.html', 
+      template: './src/cities.html', 
+      chunks: ["cities"]
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'settings.html', 
+      template: './src/settings.html', 
+      chunks: ["settings"]
     }),
   ],
   module: {

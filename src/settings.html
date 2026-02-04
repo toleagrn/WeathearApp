@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>Settings</title>
 </head>
 <body>
-    <!--Left side of the page-->
     <div class="sidebar liquid-glass">
         <svg class="svg-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2.5 5.5L3.11612 6.11612C3.68206 6.68206 4.44964 7 5.25 7C6.05036 7 6.81794 6.68206 7.38388 6.11612L7.61612 5.88388C8.18206 5.31794 8.94964 5 9.75 5C10.5504 5 11.3179 5.31794 11.8839 5.88388L12.1161 6.11612C12.6821 6.68206 13.4496 7 14.25 7C15.0504 7 15.8179 6.68206 16.3839 6.11612L16.6161 5.88388C17.1821 5.31794 17.9496 5 18.75 5C19.5504 5 20.3179 5.31794 20.8839 5.88388L21.5 6.5M2.5 11.5L3.11612 12.1161C3.68206 12.6821 4.44964 13 5.25 13C6.05036 13 6.81794 12.6821 7.38388 12.1161L7.61612 11.8839C8.18206 11.3179 8.94964 11 9.75 11C10.5504 11 11.3179 11.3179 11.8839 11.8839L12.1161 12.1161C12.6821 12.6821 13.4496 13 14.25 13C15.0504 13 15.8179 12.6821 16.3839 12.1161L16.6161 11.8839C17.1821 11.3179 17.9496 11 18.75 11C19.5504 11 20.3179 11.3179 20.8839 11.8839L21.5 12.5M2.5 17.5L3.11612 18.1161C3.68206 18.6821 4.44964 19 5.25 19C6.05036 19 6.81794 18.6821 7.38388 18.1161L7.61612 17.8839C8.18206 17.3179 8.94964 17 9.75 17C10.5504 17 11.3179 17.3179 11.8839 17.8839L12.1161 18.1161C12.6821 18.6821 13.4496 19 14.25 19C15.0504 19 15.8179 18.6821 16.3839 18.1161L16.6161 17.8839C17.1821 17.3179 17.9496 17 18.75 17C19.5504 17 20.3179 17.3179 20.8839 17.8839L21.5 18.5" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
         <div class="menu-container" id="main-redirect">
@@ -22,76 +21,13 @@
             <h3 class="menu-text">Settings</h3>
         </div>
     </div>
-
-    <!--Middle part of the page-->
-    <div class="main-content">
-        <input type="text" class="search liquid-glass" placeholder="Search for a city..." name="search">
-        <div class="main-display">
-            <div class="live-forecast-section">
-                <h1 class="city-name big-text"></h1>
-                <h3 class="rain-chance"></h3>
-                <h1 class="temp big-text"></h1>
-            </div>
-            <div id="main-icon" class="big-icon-section"></div>
-        </div>
-        <div class="forecast-sections-container">
-            <div class="today-forecast liquid-glass">
-                <h5>TODAY FORECAST</h5>
-                <div class="forecast-section">
-                
-                </div>
-            </div>
-            <div class="air-conditions liquid-glass">
-                <h5>AIR CONDITIONS</h5>
-                <div class="details-section-parent">
-                    <div class="details-section">
-                        <div class="details-card" id="real-feel">
-                            <h4>Real Feel</h4>
-                        </div>
-                        <div class="details-card" id="chance-of-rain">
-                            <h4>Chance of rain</h4>
-                        </div>
-                    </div>
-                    <div class="details-section">
-                        <div class="details-card" id="sunrise">
-                            <h4>Sunrise</h4>
-                        </div>
-                        <div class="details-card" id="sunset">
-                            <h4>Sunset</h4>
-                        </div>
-                    </div>
-                    <div class="details-section"> 
-                        <div class="details-card" id="wind">
-                            <h4>Wind</h4>
-                        </div>
-                        <div class="details-card" id="uv-index">
-                            <h4>UV Index</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="main-content-settings">
+        <h1 class="heading-text">Settings</h1>
+        <div class="liquid-glass city-card unit-card">
+            <h2>Units</h2>
+            <button id="celsius">Celsius</button>
+            <button id="farenheit">Fahrenheit</button>
         </div>
     </div>
-
-    <!--Right side of the screen-->
-    <div class="right-section">
-        <div class="week-forecast liquid-glass">
-            <h4 class="week-heading">WEEK FORECAST</h4>
-            <div class="week-forecast-parent">
-                
-            </div>
-        </div>
-    </div>
-
-    <!--Modal Overlay-->
-    <div id="custom-modal-overlay" class="modal-hidden">
-    <div class="confirm-box liquid-glass">
-        <h4>Save <span id="city-preview"></span> to cities?</h4>
-        <div class="modal-buttons">
-            <button id="cancel-btn">Cancel</button>
-            <button id="confirm-btn">Yes</button>
-        </div>
-    </div>
-</div>
 </body>
 </html>
