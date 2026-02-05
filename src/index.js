@@ -133,7 +133,7 @@ const settingsRedirect = document.querySelector("#settings-redirect");
 
 // Displaying the data in the containers
 function displayData(data) {
-    cityName.textContent = data.city;
+    cityName.textContent = data.city.split(",")[0];
     condition.textContent = data.condition;
     temp.textContent = data.temp + "°";
     
@@ -266,6 +266,6 @@ function getCitiesFromStorage() {
 
 // Save city
 function saveCityToStorage(city) {
-    cities.push(city);
+    cities.push(city.split(",")[0]);
     localStorage.setItem("cities", JSON.stringify(cities));
 }
